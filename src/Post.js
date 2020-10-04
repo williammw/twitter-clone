@@ -12,23 +12,23 @@ function Post({
   return (
     <div className="post">
       <div className="post__avatar">
-        <Avatar src="https://pbs.twimg.com/profile_images/1267841444200321025/4jtlvrSK_400x400.jpg"></Avatar>
+        <Avatar src={avatar}></Avatar>
       </div>
       <div className="post__body">
         <div className="post__header">
           <div className="post__headerText">
-            <h3>William Wong {" "}
+            <h3>{displayName} {" "}
               <span className="post__headerSpecial">
-                <VerifiedUserIcon className="post__badge"/>
-                @wwwwwwwwwwwwww
+                {verified && <VerifiedUserIcon className="post__badge"/>}
+                @{username}
                 </span> 
             </h3> 
           </div>
           <div className="post__headerDescription">
-            <p>I build twitter layout using reactJs, fucking cool</p>
+            <p>{text}</p>
           </div>
         </div>
-        <img src="https://media.giphy.com/media/3o8dFn5CXJlCV9ZEsg/giphy.gif" alt=""/>
+        <img src={image} alt=""/>
         <div className="post__footer">
           <ChatBubbleOutlineIcon fontSize="small" /> 
           <RepeatIcon fontSize="small" />
