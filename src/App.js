@@ -4,6 +4,7 @@ import { Counter } from './components/counter/Counter';
 import './App.css';
 import SideBar from './Sidebar'
 import Feed from './Feed'
+import Widgets from './Widgets'
 function App() {
   return (
     <div className="App">      
@@ -13,6 +14,7 @@ function App() {
       {/* Feed */}
       <Feed/>
       {/* Widget */}
+      <Widgets/>
     </div>
   );
 }
