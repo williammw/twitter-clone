@@ -1,6 +1,7 @@
 import React from 'react'
 import './Feed.css';
-
+import TweetBox from './TweetBox.js'
+import Post from './Post'
 
 function Feed() {
   return (
@@ -14,49 +15,10 @@ function Feed() {
         </div>
 
       {/* TweetBox */}
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
-      <h3>DWOIJQ</h3>
+      <TweetBox />      
       {/* Post */}
+      <Post />
+      
       {/* Post */}
       {/* Post */}
       {/* Post */}

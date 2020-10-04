@@ -27,7 +27,7 @@ export default function Sidebar() {
       <SidebarOption  />
       {/* SidebarOption */}
       {/* {button tweeet} */}
-      <Button variant="outlined" className="sidebar__tweet" fullWidth>Tweet</Button>
+      <Button variant="outlined" className="sidebar__tweetButton" fullWidth>Tweet</Button>
       
     </div>
   )

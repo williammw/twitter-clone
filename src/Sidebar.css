@@ -13,7 +13,7 @@
   margin-right:20px;
 }
 
-.sidebar__tweet {
+.sidebar__tweetButton {
   background-color:var(--twitter-color) !important;
   border:none !important;
   color:white !important;
