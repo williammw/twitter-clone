@@ -17,7 +17,11 @@ function TweetBox() {
       verified:true,
       text:tweetMessage,
       image:tweetImage,
+      avatar:"https://pbs.twimg.com/profile_images/1267841444200321025/4jtlvrSK_400x400.jpg",
+      timestamp: new Date(),
     })
+    setTweetMessage("")
+    setTweetImage("")
   }
   return (
     <div className="tweetBox">
