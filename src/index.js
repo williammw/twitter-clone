@@ -5,12 +5,17 @@ import App from './App';
 import store from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import { StateProvider } from './StateProvider';
+
+import reducer , {initialState} from './reducer'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    {/* <Provider store={store}> */}
+      <StateProvider initialState={initialState} reducer={reducer}>
+        <App />
+      </StateProvider>      
+    {/* </Provider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
