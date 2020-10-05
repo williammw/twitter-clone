@@ -8,7 +8,7 @@ function Feed() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    db.collection('posts').onSnapshot(snapshot => (
+    db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => (
       setPosts(snapshot.docs.map(doc => doc.data()))
     ))
   }, [])
@@ -26,7 +26,7 @@ function Feed() {
       {/* Post */}
       <FlipMove>
       {posts
-      .sort((a,b)=>  b.timestamp - a.timestamp)
+      // .sort((a,b)=>  b.timestamp - a.timestamp)
       .map(post=> (
         <Post 
         key={post.text}
