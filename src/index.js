@@ -2,20 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import store from './app/store';
+// import store from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { StateProvider } from './StateProvider';
-
-import reducer , {initialState} from './reducer'
+import { PersistGate } from 'redux-persist/integration/react';
+import {store, persistor} from './redux/store'
+// import reducer , {initialState} from './reducer'
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
-      <StateProvider initialState={initialState} reducer={reducer}>
+    <Provider store={store}>
+      <BrowserRouter>      
+      {/* <StateProvider initialState={initialState} reducer={reducer}> */}
+      <PersistGate persistor={persistor}>
         <App />
-      </StateProvider>      
-    {/* </Provider> */}
+        </PersistGate>
+      {/* </StateProvider>       */}
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

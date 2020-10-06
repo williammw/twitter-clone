@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 
-import { Counter } from './components/counter/Counter';
+
 import './App.css';
 import SideBar from './Sidebar'
 import Feed from './Feed'
 import Widgets from './Widgets'
 import Login from './Login'
-import { useStateValue } from './StateProvider';
+// import { useStateValue } from './StateProvider';
 function App() {
   
-  const[{user}, dispatch] = useStateValue()
+  // const[{user}, dispatch] = useStateValue()
+const [user, setuser] = useState(null)
   return (    
       <>        
       {!user ? (
