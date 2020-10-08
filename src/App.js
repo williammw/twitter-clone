@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 import './App.css';
@@ -11,13 +11,16 @@ import { selectLogin, getloginstatus } from './LoginSlice'
 import {selectCurrentUser} from './redux/user.selectors'
 // import { useStateValue } from './StateProvider';
 
-const App = ({currentUser}) => {
+const App = () => {
  
-    console.log(currentUser)
+  const [user, setUser] = useState(null)
+  useEffect(() => {
+    console.log(this)
+  }, [])
     
     return (
       <>        
-      {!currentUser ? (
+      {!user ? (
       <Login/>
       ) : (
         <div className="App">  
