@@ -6,16 +6,18 @@ import SideBar from './Sidebar'
 import Feed from './Feed'
 import Widgets from './Widgets'
 import Login from './Login'
+import { createStructuredSelector } from 'reselect';
 import { selectLogin, getloginstatus } from './LoginSlice'
+import {selectCurrentUser} from './redux/user.selectors'
 // import { useStateValue } from './StateProvider';
 
-class App extends React.Component{
-  render() { 
-    const { user } = this.props;
-    console.log(user)
+const App = ({currentUser}) => {
+ 
+    console.log(currentUser)
+    
     return (
       <>        
-      {!user ? (
+      {!currentUser ? (
       <Login/>
       ) : (
         <div className="App">  
@@ -29,12 +31,12 @@ class App extends React.Component{
       )}  
       </>
     )
-  }
+  
 }
 
-const mapStateToProps = (state, ownProps) => {    
-  return { user: state.users }
-}
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
+});
 
 
 export default connect(mapStateToProps, )(App);
