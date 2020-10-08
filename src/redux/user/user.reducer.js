@@ -1,4 +1,6 @@
 import UserActionTypes from './user.types';
+import { doGoogleSignIn } from './user.util';
+
 
 const INITIAL_STATE = {
   currentUser: null,
@@ -10,7 +12,8 @@ const userReducer = (state = INITIAL_STATE, action) => {
     case UserActionTypes.GOOGLE_SIGN_IN_START:
       return {
         ...state,
-        isFetching : true
+        isFetching: true,
+        doSignIn: "s"
       }
     default:
       return state;

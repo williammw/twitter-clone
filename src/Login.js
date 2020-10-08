@@ -21,7 +21,6 @@ class Login extends Component {
         <p>finance acting .com</p>
         <Button onClick={googleSignInStart}>Sign in with Google</Button>
       </div>
-
     </div>
     )
   }
