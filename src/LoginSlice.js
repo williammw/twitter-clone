@@ -1,21 +1,19 @@
 import {createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {auth, provider} from './firebase'
 
-export const doSignIn = createAsyncThunk(
+export const doSignIn = createAsyncThunk (
   'doSignInWithGoogle',
-  async (env) => {
-    const res = await auth.signInWithPopup(provider)
-    if(res?.user){
-      return "fuckfuck"
-    }
-    //return  res.user
+ async () => {    
+   const response = await auth.signInWithPopup(provider)   
+   //console.log(response)   
+   return response.user.displayName   
   }
 )
 
 export const LoginSlice = createSlice({
-  name: 'LOGIN',
+  name: 'loginState',
   initialState: {
-    user :[],
+    user : null,
   },
   reducers: {
     getloginstatus  : (state, action) => {
@@ -24,10 +22,10 @@ export const LoginSlice = createSlice({
   },
   extraReducers: {
     // Add reducers for additional action types here, and handle loading state as needed
-    [doSignIn.fulfilled]: (state, action) => {
-      // Add user to the state array
-      console.log(action)
-      state.user =[ action.payload];
+    [doSignIn.fulfilled]: (state, action)  => {
+      // Add user to the state array       
+      state.user = action.payload;
+      
     },
     [doSignIn.rejected]: (state, action) => {
       // Add user to the state array
@@ -37,6 +35,15 @@ export const LoginSlice = createSlice({
   }
 });
 
-export const selectLogin = state => state.user;
-export const {getloginstatus} = LoginSlice.actions;
+
+export const { getloginstatus } = LoginSlice.actions
+
+
+
+export const incrementAsync = amount => dispatch => {
+  setTimeout(() => {
+    dispatch(getloginstatus(amount));
+  }, 1000);
+};
+export const selectLogin = state => state.loginState;
 export default LoginSlice.reducer;
